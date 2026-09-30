@@ -1,0 +1,32 @@
+# Trabalho Prático: Automação Digital e Controle de Qualidade
+
+**Disciplina:** Algoritmos e Lógica de Programação (Módulo 6) - UniFECAF  
+**Aluno:** Yuri | **Curso:** Inteligência Artificial  
+
+---
+
+### 1. Importância da Automação na Indústria
+A inspeção manual de peças em esteiras de fábrica é lenta, gera custos operacionais altos e está sujeita a falhas por cansaço dos operadores, o que permite que produtos defeituosos cheguem ao consumidor. Automatizar esse processo com Python garante que todas as peças passem pelas mesmas medições sem erro humano, separando as aprovadas em caixas de 10 unidades e registrando o histórico exato das falhas para correção rápida na produção.
+
+---
+
+### 2. Estrutura do Raciocínio Lógico
+O programa foi construído com base nos conceitos aprendidos na disciplina:
+- **Funções (`def`):** Separei o código em blocos dedicados (`avaliar_qualidade`, `cadastrar_peca`, `listar_pecas`, `remover_peca`, `listar_caixas` e `gerar_relatorio`).
+- **Decisões (`if / else`):** Checam se o peso está entre 95g e 105g, se a cor é azul/verde e se o comprimento está entre 10cm e 20cm. Se houver desvio, a falha vai para a lista de motivos da peça.
+- **Repetições (`while` e `for`):** Um loop `while True` mantém o menu ativo até a saída do usuário, e loops `for` percorrem a lista para checar IDs duplicados, listar peças e contar caixas.
+- **Coleções (`list` e `dict`):** Cada peça é representada como um dicionário com seus dados e status. Listas são usadas para guardar o histórico geral e controlar os lotes de 10 peças por caixa.
+
+---
+
+### 3. Benefícios e Desafios
+- **Benefícios:** Processo 100% padronizado, rastreabilidade dos motivos de descarte e fechamento automático de embalagens.
+- **Desafios:** Tratar entradas incorretas do usuário no terminal com `try/except` (evitando travamentos se digitarem texto no peso/comprimento) e recalcular as caixas automaticamente ao excluir uma peça já cadastrada.
+
+---
+
+### 4. Expansão para Cenário Real (Sensores e IA)
+Em uma linha de montagem real, o sistema substituiria os inputs do teclado por:
+1. **Sensores na esteira:** Célula de carga para pesar e sensor laser para medir o comprimento na passagem da peça.
+2. **Visão Computacional / IA:** Câmeras industriais com redes neurais para reconhecer a cor e identificar trincas ou defeitos superficiais.
+3. **Mecânica:** Integração com CLP e pistões pneumáticos para empurrar peças defeituosas para o descarte e despachar as caixas de 10 unidades automaticamente.
